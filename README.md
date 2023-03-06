@@ -6,7 +6,7 @@ Ubuntu 64bit, Windows 64bit
 Autori
 ------
 
-Nazev tymu
+MathMasters-Calculator
 - xzhukd00 Dmytro Zhuk 
 - xlusky00 Kyrylo Lus 
 - xterge00 Azatbek Tergeussov 

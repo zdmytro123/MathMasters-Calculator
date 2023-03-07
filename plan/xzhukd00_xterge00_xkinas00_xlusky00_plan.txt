@@ -1,0 +1,31 @@
+MathMasters: xzhukd00 (vedoucí týmu), xterge00, xkinas00, xlusky00
+IVS - Projekt 2 - Týmová spolupráce - Kalkulačka
+
+a) Termíny:
+
+7.03. Plán projektu
+20.03. Ovladání Python a GIT Basics + math/numpy, Tkinter/PyQt5/jiná knihovna pro GUI, Google Test, Doxygen
+27.03. Testy podle Test-Driven-Development, zakládní logika (zakládní aritmetické operace), první verze GUI
+03.04. Pokročilá logika (profiling, generování nahodných čísel, grafy), druhá verze GUI  
+10.04. Mockup budoucí verze, makefile, instalace/odinstalace
+17.04. Uživatelský manuál, dokumentace, připadné oprávy produktu
+24.04. Finální ladění a finální verze produktu
+08.05. Problémy, prezentace produktu 
+květen - Instalace u zákazníka a obhajoba produktu
+
+b) Přidělení úkolů na projektu jednotlivým řešitelům:
+
+- xkinas00: vytvoření matematické knihovny (zakládní a pokročilá logika), vytvoření testů pro matematickou knihovnu
+- xterge00: vytvoření testů pro matematickou knihovnu, manualy a dokumentace
+- xlusky00: vytvoření GUI pro kalkulačku, vytvoření matematické knihovny (zakládní a pokročilá logika) 
+- xzhukd00: správa repozitáře, manualy a dokumentace, kontrola práce všech členů tymu
+- všichni: mockup budoucí verze, makefile, instalace/odinstalace, prezentace produktu, dodržování termínů
+
+c) Zvolené komunikační kanály pro komunikaci v týmu a stanovená pravidla pro komunikaci:
+
+- Telegram (main komunikace + vyběr času schůzek) 
+- Trello - Kanban deska pro řizení produktu
+
+d) Zvolený systém pro správu verzí a hosting + informaci, jak do repozitáře mohou nahlédnout vyučující/cvičící:
+
+- github.com -> Repozitář na githubu (https://github.com/zdmytro123/MathMasters-Calculator), uživateli ivskontrola byl udělen přístup

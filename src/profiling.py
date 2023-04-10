@@ -4,7 +4,7 @@ import sys
 def sample_std_deviation(numbers):
     n = len(numbers)
     mean = div(sum(numbers),n)
-    variance = div(sum(sub((exponentiation(x, 2) for x in numbers), multiply(n, (exponentiation(mean, 2))))), (n-1))
+    variance = div((sum([exponentiation( (sub(x, mean)), 2) for x in numbers])), (n-1))
     return sqrt(variance)
 
 numbers = []

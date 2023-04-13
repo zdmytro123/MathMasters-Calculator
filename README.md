@@ -1,7 +1,7 @@
 Prostredi
 ---------
 
-Ubuntu 64bit, Windows 64bit
+Ubuntu 64bit
 
 Autori
 ------

@@ -103,7 +103,6 @@ def sqrt(num1, num2=2):
     else:
         return round((num1 ** (1./num2)), 10)
 
-
 ##
 # @brief Function to calculate the absolute value of a given number
 #
@@ -115,5 +114,21 @@ def abs(num):
         return round(num, 10)
     else:
         return round((-num), 10)
-    
+
+##
+# @brief Function to return Pi value, 10 digits
+#
+# @return Returns Pi value
+def pi():
+    pi = 3.141592653
+    return pi
+
+##
+# @brief Function to return Euler's number value, 10 digits
+#
+# @return Returns e value
+def e():
+    e = 2.7182818284
+    return e
+
 # End of file logic.py

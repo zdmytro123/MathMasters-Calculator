@@ -6,8 +6,8 @@ Jednoduchá kalkulačka s vlastní matematickou knihovnou, GUI a instalátorem. 
 
 Tvorba
 ------
-Program byl naprogramován v jazyce Python s použitím:
-- PyQt 5.14.2
+Program byl naprogramován v jazyce Python 3.10.6 s použitím:
+- PyQt 5.15.2
 
 
 Prostředi

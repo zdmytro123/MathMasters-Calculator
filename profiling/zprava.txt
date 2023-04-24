@@ -1,0 +1,3 @@
+Nejvícekrát volané funkce jsou round, exponentiation a sub.
+Kvůli jednoduchosti programu se při zkušebním počtu čísel zvlášť neprojevuje časová náročnost volaní funkcí.
+Však výsledky se mohou vyrázně zvýšit při zvětšení počtu čísel. 

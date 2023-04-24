@@ -9,7 +9,7 @@
 
 ##
 # @file logic.py
-# @author Vilem Gottwald, Pavel Marek
+# @author Daria Kinash
 # @brief  Math Library with basic mathematical operations
 #
 
@@ -56,7 +56,7 @@ def mul(num1, num2):
 # @return  Returns quotient of two numbers
 def div(num1, num2):
     if num2 == 0:
-        raise ZeroDivisionError("Division error - dividing by zero")
+        return ZeroDivisionError("Division error - dividing by zero")
     else:
         return round(num1 / num2, 10)
 
@@ -71,7 +71,7 @@ def factorial(num):
     if num == 0:
         return 1
     elif num < 0:
-        raise ValueError("Factorial error - number is smaller than 0")
+        return ValueError("Factorial error - number is smaller than 0")
     else:
         return round ((num * factorial(num-1)), 10)
 
@@ -85,7 +85,7 @@ def factorial(num):
 # @return Returns result of the exponentiation
 def exponentiation(num1, num2):
     if num2 < 0:
-        raise ValueError("Exponentiation error - exponent is not a natural number")
+        return ValueError("Exponentiation error - exponent is not a natural number")
     else:
         return round(num1 ** num2, 10)
 
@@ -99,7 +99,7 @@ def exponentiation(num1, num2):
 # @return Returns result of the root
 def sqrt(num1, num2=2):
     if num1 < 0:
-        raise ValueError("Root error - even degree of a negative radicant")
+        return ValueError("Root error - even degree of a negative radicant")
     else:
         return round((num1 ** (1./num2)), 10)
 
@@ -114,21 +114,5 @@ def abs(num):
         return round(num, 10)
     else:
         return round((-num), 10)
-
-##
-# @brief Function to return Pi value, 10 digits
-#
-# @return Returns Pi value
-def pi():
-    pi = 3.141592653
-    return pi
-
-##
-# @brief Function to return Euler's number value, 10 digits
-#
-# @return Returns e value
-def e():
-    e = 2.7182818284
-    return e
 
 # End of file logic.py

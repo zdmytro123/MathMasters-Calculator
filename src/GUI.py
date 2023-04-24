@@ -21,7 +21,7 @@ class CALCULATOR(QWidget):
         self.left = 10
         self.top = 40
         self.width = 1060
-        self.height = 600
+        self.height = 700
         self.initUI()
 
     def initUI(self):
@@ -34,13 +34,13 @@ class CALCULATOR(QWidget):
 
         def output_style (self):
             self.output = QLineEdit(self)
-            self.output.setFixedSize(1030, 50)
+            self.output.setFixedSize(1020, 50)
             self.output.setFocusPolicy(Qt.ClickFocus)
             self.output.setAlignment(QtCore.Qt.AlignRight)
             self.output.setCursor(QCursor(Qt.IBeamCursor))
             self.output.mousePressEvent = lambda _: self.output.setFocus(True)
-            self.output.setReadOnly(False)
-            self.output.setStyleSheet(f"background-color: #000000; color: #FFFFFF ; font-family: Comic Sans MS; font-size: 20px; border-radius: 15px; border: 2px solid #FFFFFF;")
+            self.output.setReadOnly(True)
+            self.output.setStyleSheet(f"background-color: #000000; color: #FFFFFF ; font-family: Comic Sans MS; font-size: 40px; border-radius: 15px; border: 2px solid #FFFFFF;")
             self.output.setPlaceholderText(" ")
             self.output.setMaxLength(100)
             self.output.setDragEnabled(True)
@@ -111,13 +111,8 @@ class CALCULATOR(QWidget):
         def click_equals():
 
             try:
+
                 text = self.output.text()
-
-                if 'e' in text:
-                    self.output.setText(str(logic.e()))
-
-                if 'п' in text:
-                    self.output.setText(str(logic.pi()))
 
                 def make_expression(tokens):
                     precedence = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3, '√': 4, 'abs': 4, '!': 4, '(': 5, ')': 5}
@@ -186,48 +181,12 @@ class CALCULATOR(QWidget):
                 result = evaluate(expression_tree)
                 self.output.setText(str(result))
 
-                """ if "+" in text:
-                    num1, num2 = text.split("+")
-                    num1, num2 = map(float, [num1, num2])
-                    text1 = logic.add(num1, num2)
-                if ("-" in text) and ("|" not in text):
-                    num1, num2 = text.split("-")
-                    num1, num2 = map(float, [num1, num2])
-                    text1 = logic.sub(num1, num2)
-                if "*" in text:
-                    num1, num2 = text.split("*")
-                    num1, num2 = map(float, [num1, num2])
-                    text1 = logic.mul(num1, num2)
-                if "/" in text:
-                    num1, num2 = text.split("/")
-                    num1, num2 = map(float, [num1, num2])
-                    text1 = logic.div(num1, num2)
-                if "π" in text:
-                    text1 = text.replace("π", str(logic.pi()))
-                if "e" in text:
-                    text1 = text.replace("e", str(logic.e()))
-                if "√" in text:
-                    num1, num2 = text.split("√")
-                    if not num1:
-                        num1 = "2"
-                    num1, num2 = map(float, [num1, num2])
-                    text1 = logic.sqrt(num2, num1)
-                if "!" in text:
-                    text1 = logic.factorial(eval(text.replace("!", "")))
-                if "|" in text:
-                    text = text.replace("-", "")
-                    text1 = logic.abs(eval(text.replace("|", "")))
-                if "^" in text:
-                    num1, num2 = text.split("^")
-                    num1, num2 = map(float, [num1, num2])
-                    text1 = logic.exponentiation(num1, num2)
-
-                self.output.setText(str(round(text1, 10)))"""
-
             except ZeroDivisionError:
                 self.output.setText("Math Error")
             except SyntaxError:
                 self.output.setText("Syntax Error")
+            except:
+                self.output.setText("Unknown Error")
 
         def click_clear():
             self.output.setText("")
@@ -240,12 +199,6 @@ class CALCULATOR(QWidget):
 
         def click_factorial():
             self.output.setText(self.output.text() + "!")
-
-        def click_pi():
-            self.output.setText(self.output.text() + "π")
-
-        def click_e():
-            self.output.setText(self.output.text() + "e")
 
         def click_LBrace():
             self.output.setText(self.output.text() + "(")
@@ -262,16 +215,6 @@ class CALCULATOR(QWidget):
         def click_minimize():
             self.showMinimized()
 
-        def click_FIT():
-            pixmap = QPixmap("C:/Users/kiril/OneDrive/Рабочий стол/PROGRAMING/PYTHON/FIT.png")
-            url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            button.setStyleSheet(f"background-image: url({pixmap.toImage()}); border-radius: 15px; border: 2px solid red;")
-            button.setCursor(QCursor(Qt.PointingHandCursor))
-            href_label = QLabel(f'<a href="{url}"></a>')
-            href_label.setOpenExternalLinks(True)
-            href_label.linkActivated.connect(lambda: QDesktopServices.openUrl(QUrl(url)))
-            return href_label
-
         def click_help():
             self.help_window = QWidget()
             self.help_window.setWindowTitle("Help")
@@ -280,35 +223,46 @@ class CALCULATOR(QWidget):
             self.help_window_layout = QVBoxLayout(self.help_window)
             self.help_window_label = QLabel(self.help_window)
             self.help_window_label.setText("This is a simple calculator.")
-            self.help_window_label.setStyleSheet("background-color: #000000; color: #FFFFFF; font-family: Comic Sans MS; font-size: 20px; font-weight: bold; text-align: center;")
+            self.help_window_label.setStyleSheet("background-color: #000000; color: #FFFFFF; font-size: 30px; font-weight: bold; text-align: center;")
             self.help_window_layout.addWidget(self.help_window_label)
             self.help_window.show()
 
         def style_for_button(button):
-            r = random.randint(0, 255)
-            g = random.randint(0, 255)
-            b = random.randint(0, 255)
+            r = random.randint(120, 255)
+            g = random.randint(120, 255)
+            b = random.randint(120, 255)
             if r + g + b > 400:
                 r -= 50
                 g -= 50
                 b -= 50
             color = QColor(r, g, b)
             button.setFixedSize(100, 100)
-            button.setStyleSheet(f"background-color: #FFFFFF; color: {color.name()}; font-size: 20px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
+            button.setStyleSheet(f"background-color: #FFFFFF; color: {color.name()}; font-size: 30px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
             button.setCursor(QCursor(Qt.PointingHandCursor))
-            button.enterEvent = lambda _: button.setStyleSheet(f"background-color: {color.name()}; color: #000000; font-size: 20px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid #FFFFFF;")
-            button.leaveEvent = lambda _: button.setStyleSheet(f"background-color: #FFFFFF; color: {color.name()}; font-size: 20px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
+            button.enterEvent = lambda _: button.setStyleSheet(f"background-color: {color.name()}; color: #000000; font-size: 30px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid #FFFFFF;")
+            button.leaveEvent = lambda _: button.setStyleSheet(f"background-color: #FFFFFF; color: {color.name()}; font-size: 30px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
 
         def style_for_button2(button):
-            r = random.randint(0, 255)
-            g = random.randint(0, 255)
-            b = random.randint(0, 255)
+            r = random.randint(120, 255)
+            g = random.randint(120, 255)
+            b = random.randint(120, 255)
             color = QColor(r, g, b)
             button.setFixedSize(100, 100)
-            button.setStyleSheet(f"background-color: #000000; color: {color.name()}; font-size: 20px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
+            button.setStyleSheet(f"background-color: #000000; color: {color.name()}; font-size: 30px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
             button.setCursor(QCursor(Qt.PointingHandCursor))
-            button.enterEvent = lambda _: button.setStyleSheet(f"background-color: {color.name()}; color: #000000; font-size: 20px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid #000000;")
-            button.leaveEvent = lambda _: button.setStyleSheet(f"background-color: #000000; color: {color.name()}; font-size: 20px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
+            button.enterEvent = lambda _: button.setStyleSheet(f"background-color: {color.name()}; color: #000000; font-size: 30px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid #000000;")
+            button.leaveEvent = lambda _: button.setStyleSheet(f"background-color: #000000; color: {color.name()}; font-size: 30px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
+
+        def style_for_button3(button):
+            r = random.randint(120, 255)
+            g = random.randint(120, 255)
+            b = random.randint(120, 255)
+            color = QColor(r, g, b)
+            button.setFixedSize(100, 210)
+            button.setStyleSheet(f"background-color: #000000; color: {color.name()}; font-size: 23px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
+            button.setCursor(QCursor(Qt.PointingHandCursor))
+            button.enterEvent = lambda _: button.setStyleSheet(f"background-color: {color.name()}; color: #000000; font-size: 23px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid #000000;")
+            button.leaveEvent = lambda _: button.setStyleSheet(f"background-color: #000000; color: {color.name()}; font-size: 23px; font-weight: bold; text-align: center; border-radius: 15px; border: 2px solid {color.name()};")
 
         for i in range(1, 10):
             button = QPushButton(str(i))
@@ -326,11 +280,6 @@ class CALCULATOR(QWidget):
         style_for_button2(power_button)
         buttons_layout.addWidget(power_button, 0, 4, alignment=Qt.AlignCenter)
 
-        e_button = QPushButton("e")
-        e_button.clicked.connect(click_e)
-        style_for_button2(e_button)
-        buttons_layout.addWidget(e_button, 0, 5, alignment=Qt.AlignCenter)
-
         minus_button = QPushButton("-")
         minus_button.clicked.connect(click_minus)
         style_for_button2(minus_button)
@@ -340,11 +289,6 @@ class CALCULATOR(QWidget):
         comma_button.clicked.connect(click_comma)
         style_for_button2(comma_button)
         buttons_layout.addWidget(comma_button, 1, 4, alignment=Qt.AlignCenter)
-
-        pi_button = QPushButton("π")
-        pi_button.clicked.connect(click_pi)
-        style_for_button2(pi_button)
-        buttons_layout.addWidget(pi_button, 1, 5, alignment=Qt.AlignCenter)
 
         multiply_button = QPushButton("×")
         multiply_button.clicked.connect(click_multiply)
@@ -358,8 +302,8 @@ class CALCULATOR(QWidget):
 
         close_button = QPushButton("Close")
         close_button.clicked.connect(click_close)
-        style_for_button2(close_button)
-        buttons_layout.addWidget(close_button, 2, 5, alignment=Qt.AlignCenter)
+        style_for_button3(close_button)
+        buttons_layout.addWidget(close_button, 0, 5, 2, 1, alignment=Qt.AlignCenter)
 
         clear_button = QPushButton("🗑")
         clear_button.clicked.connect(click_clear)
@@ -373,7 +317,7 @@ class CALCULATOR(QWidget):
         clear_last_button = QPushButton("⌫")
         clear_last_button.clicked.connect(clear_last)
         style_for_button2(clear_last_button)
-        buttons_layout.addWidget(clear_last_button, 3,2, alignment=Qt.AlignCenter)
+        buttons_layout.addWidget(clear_last_button, 3, 2, alignment=Qt.AlignCenter)
 
         divide_button = QPushButton("÷")
         divide_button.clicked.connect(click_divide)
@@ -387,8 +331,8 @@ class CALCULATOR(QWidget):
 
         minimize_button = QPushButton("Minimize")
         minimize_button.clicked.connect(click_minimize)
-        style_for_button2(minimize_button)
-        buttons_layout.addWidget(minimize_button, 3, 5, alignment=Qt.AlignCenter)
+        style_for_button3(minimize_button)
+        buttons_layout.addWidget(minimize_button, 2, 5, 2, 1, alignment=Qt.AlignCenter)
 
         LBrace_button = QPushButton("(")
         LBrace_button.clicked.connect(click_LBrace)
@@ -416,7 +360,7 @@ class CALCULATOR(QWidget):
         buttons_layout.addWidget(help_button, 4, 4, alignment=Qt.AlignCenter)
 
         fit_buton = QPushButton("FIT")
-        fit_buton.clicked.connect(click_FIT)
+        fit_buton.clicked.connect(lambda: QDesktopServices.openUrl(QUrl('https://www.youtube.com/watch?v=PxiGO8l4Ts4')))
         style_for_button2(fit_buton)
         buttons_layout.addWidget(fit_buton, 4, 5, alignment=Qt.AlignCenter)
 

@@ -22,18 +22,15 @@ pack: clean doc install
 	cd ../.. && zip -qr $(NAME).zip $(NAME)
 	cd ../.. && rm -rf $(NAME)
 
-
 run:
 	python3 GUI.py
 
 doc: Doxyfile
 	rm -rf ../doc
 	doxygen $<
-	mv doc ../
-	mv warning_doxygen.txt ../doc
 
 profile: profiling.py
-	python3 $<
+	python3 $< < data.txt
 
 install: GUI.py logic.py
 	rm -rf ../install/*.deb

@@ -2,7 +2,7 @@
 ###################################################################
 # Project name: MathMasters-Calculator
 # File: calc_tests.py
-# Authors: Azatbek Tergeussov
+# Authors: Azatbek Tergeussov, Daria Kinash
 # Description: Test for mathematical library
 ###################################################################
 

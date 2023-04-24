@@ -1,9 +1,25 @@
-Prostredi
+IVS Projekt 2 - MathMasters-Calculator
+---------
+
+Jednoduchá kalkulačka s vlastní matematickou knihovnou, GUI a instalátorem. Taky přiložen manuál a programová dokumentace.
+
+
+Tvorba
+------
+Program byl naprogramován v jazyce Python s použitím:
+- PyQt 5.14.2
+
+
+Prostředi
 ---------
 
 Ubuntu 64bit
 
-Autori
+Instalace a odinstalace
+-----------------------
+
+
+Autoři
 ------
 
 MathMasters-Calculator
@@ -15,4 +31,4 @@ MathMasters-Calculator
 Licence
 -------
 
-Tento program je poskytovan pod GNU General Public License v3.0
+Tento program je poskytován pod GNU General Public License v3.0

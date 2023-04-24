@@ -24,9 +24,10 @@ Autoři
 
 MathMasters-Calculator
 - xzhukd00 Dmytro Zhuk 
+- xkinas00 Daria Kinash
 - xlusky00 Kyrylo Lus 
 - xterge00 Azatbek Tergeussov 
-- xkinas00 Daria Kinash
+
 
 Licence
 -------

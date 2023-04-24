@@ -31,4 +31,4 @@ MathMasters-Calculator
 Licence
 -------
 
-Tento program je poskytován pod GNU General Public License v3.0
+Tento program je poskytovan pod GNU General Public License v3.0

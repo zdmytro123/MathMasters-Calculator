@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-###################################################################
-# Project name: MathMasters-Calculator
-# File: GUI.py
-# Authors: Dmytro Zhuk, Kyrylo Lus
-# Description: Calculator GUI with advanced logic
-###################################################################
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
@@ -17,9 +11,12 @@ import random
 import logic
 import re
 
-## @file GUI.py
+## MathMasters-Calculator
+# @file GUI.py
 #
-# @brief Graphical Interface
+# @brief Graphical User Interface for simple calculator
+#
+# @author Dmytro Zhuk, Kyrylo Lus
 
 ## @class CALCULATOR
 #

@@ -38,10 +38,10 @@ class CALCULATOR(QWidget):
         self.width = 1060
         self.height = 700
         self.initUI()
-    ## Initialize GUI
-    # @brief Initialize GUI (output style, keyboard input, layout, buttons, advanced logic using logic library)
-    #
-    # @return Show widget with interactive calculator 
+## Initialize GUI
+# @brief Initialize GUI (output style, keyboard input, layout, buttons, advanced logic using logic library)
+#
+# @return Show widget with interactive calculator
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
@@ -50,10 +50,10 @@ class CALCULATOR(QWidget):
         main_layout = QVBoxLayout(self)
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
 
-        ## Output window style 
-        # @brief Initialize GUI (output style, keyboard input, layout, buttons, advanced logic using logic library)
-        #
-        # @return Show output window with certain style       
+## Output window style
+# @brief Initialize GUI (output style, keyboard input, layout, buttons, advanced logic using logic library)
+#
+# @return Show output window with certain style
         def output_style (self):
             self.output = QLineEdit(self)
             self.output.setFixedSize(1020, 50)
@@ -68,15 +68,15 @@ class CALCULATOR(QWidget):
             self.output.setDragEnabled(True)
             self.show()
         output_style(self)
-        
-        ## Calculator keyboard input
-        # @brief Initialize GUI (output style, keyboard input, layout, buttons, advanced logic using logic library)
-        #
-        # @param Event - button pressing
-        #
-        # @return Show output window with certain style  
-        #
-        # @warning Before inputting numbers into this window, a prior click on the window is needed 
+
+## Calculator keyboard input
+# @brief Initialize GUI (output style, keyboard input, layout, buttons, advanced logic using logic library)
+#
+# @param Event - button pressing
+#
+# @return Show output window with certain style
+#
+# @warning Before inputting numbers into this window, a prior click on the window is needed
         def keyPressEvent(self, event):
             key = event.key()
             if key >= QtCore.Qt.Key_0 and key <= QtCore.Qt.Key_9:
@@ -135,24 +135,24 @@ class CALCULATOR(QWidget):
         def click_comma():
             self.output.setText(self.output.text() + ".")
 
-        ## Calculator logic processing
-        # @brief Describes operator precedence and operator associativity and evaluates them accordingly  
-        #
-        # @warning All numbers must be in a float format (i.e. for int - 1.0)
+## Calculator logic processing
+# @brief Describes operator precedence and operator associativity and evaluates them accordingly
+#
+# @warning All numbers must be in a float format (i.e. for int - 1.0)
         def click_equals():
 
             try:
 
                 text = self.output.text()
 
-                ## Calculator logic processing - make expression
-                # @brief Describes operator precedence and operator associativity and evaluates them accordingly  
-                #
-                # @param Tokens parsed from parse_input function
-                #
-                # @return Expression in a format (operator, left_operand, right_operand)
-                # 
-                # @warning All numbers must be in a float format (i.e. for int - 1.0)
+## Calculator logic processing - make expression
+# @brief Describes operator precedence and operator associativity and evaluates them accordingly
+#
+# @param Tokens parsed from parse_input function
+#
+# @return Expression in a format (operator, left_operand, right_operand)
+#
+# @warning All numbers must be in a float format (i.e. for int - 1.0)
                 def make_expression(tokens):
                     precedence = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3, '√': 4, 'abs': 4, '!': 4, '(': 5, ')': 5}
                     operators = []
@@ -189,23 +189,23 @@ class CALCULATOR(QWidget):
                         left = operands.pop()
                         operands.append((op, left, right))
                     return operands[0]
-                 
-                ## Calculator logic processing - parse string input
-                # @brief Parses parenthesis, one or more digits, operations  
-                #
-                # @param Input string to be evaluated
-                #
-                # @return List extracted from the input string
+
+## Calculator logic processing - parse string input
+# @brief Parses parenthesis, one or more digits, operations
+#
+# @param Input string to be evaluated
+#
+# @return List extracted from the input string
                 def parse_input(input_string):
                     tokens = re.findall(r'\(|\)|\d+|[+\-*/^]|√|abs|!', input_string)
                     return tokens
 
-                ## Calculator logic processing - evaluate expressiong derieved from make_expression function
-                # @brief Evaluates expressions 
-                #
-                # @param Expression derieved from make_expression function
-                #
-                # @return Returns result using logic library
+## Calculator logic processing - evaluate expressiong derieved from make_expression function
+# @brief Evaluates expressions
+#
+# @param Expression derieved from make_expression function
+#
+# @return Returns result using logic library
                 def evaluate(expression):
                     if isinstance(expression, float):
                         return expression
@@ -278,10 +278,10 @@ class CALCULATOR(QWidget):
             self.help_window_layout.addWidget(self.help_window_label)
             self.help_window.show()
 
-        ## Multiple styles for buttons
-        # @brief Set certain style for a button
-        #
-        # @param Button to be changed
+## Multiple styles for buttons
+# @brief Set certain style for a button
+#
+# @param Button to be changed
         def style_for_button(button):
             r = random.randint(120, 255)
             g = random.randint(120, 255)

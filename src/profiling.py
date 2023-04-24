@@ -4,6 +4,8 @@
 # @file     profiling.py
 # @brief    Program to calculate the sample standard deviation
 # @author   Daria Kinash
+#Run the tests in the src directory by
+#typing the command: $ python3 profiling.py < data.txt, where data.txt - file containing numbers with whitespace without separator
 
 from logic import *
 import sys

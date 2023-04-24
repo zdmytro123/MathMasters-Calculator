@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-###################################################################
-# Project name: MathMasters-Calculator
-# File: logic.py
-# Authors: Daria Kinash
-# Description: Math Library with basic mathematical operations
-###################################################################
-
 
 ##
 # @file logic.py

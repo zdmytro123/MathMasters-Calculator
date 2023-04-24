@@ -2,4 +2,3 @@ xzhukd00 107 (správa repozitáře, kontrola práce všech členů tymu, vytvoř
 xkinas00 107 (vytvoření matematické knihovny (zakládní a pokročilá logika), makefile, vytvoření testů pro matematickou knihovnu, manualy a dokumentace)
 xlusky00 96 (vytvoření GUI pro kalkulačku, mockup budoucí verze)
 xterge00 90 (vytvoření testů pro matematickou knihovnu)
-

@@ -270,7 +270,7 @@ class CALCULATOR(QWidget):
             self.help_window.setStyleSheet("background-color: #000000;")
             self.help_window_layout = QVBoxLayout(self.help_window)
             self.help_window_label = QLabel(self.help_window)
-            self.help_window_label.setText("This is a simple calculator.")
+            self.help_window_label.setText("Jednoduchá kalkulačka s vlastní matematickou knihovnou, GUI a instalátorem.")
             self.help_window_label.setStyleSheet("background-color: #000000; color: #FFFFFF; font-size: 30px; font-weight: bold; text-align: center;")
             self.help_window_layout.addWidget(self.help_window_label)
             self.help_window.show()

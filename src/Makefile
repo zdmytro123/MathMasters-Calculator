@@ -1,6 +1,6 @@
 NAME = xzhukd00_xlusky00_xterge00_xkinas00
 
-.PHONY: all pack clean test doc run profile install initialization
+.PHONY: all pack clean test doc run profile initialization
 
 all: initialization run
 	chmod +x GUI.py
@@ -31,10 +31,6 @@ doc: Doxyfile
 
 profile: profiling.py
 	python3 $< < data.txt
-
-install: GUI.py logic.py
-	rm -rf ../install/*.deb
-	bash installer.sh
-
+        
 clean:
 	rm -r -f __pycache__ ../doc ../install warning_doxygen.txt ../../$(NAME)

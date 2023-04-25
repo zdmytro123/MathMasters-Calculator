@@ -1,4 +1,4 @@
-xzhukd00 107 (správa repozitáře, kontrola práce všech členů tymu, vytvoření matematické knihovny (zakládní a pokročilá logika), manualy a dokumentace, instalace/odinstalace)
-xkinas00 107 (vytvoření matematické knihovny (zakládní a pokročilá logika), makefile, vytvoření testů pro matematickou knihovnu, manualy a dokumentace)
-xlusky00 96 (vytvoření GUI pro kalkulačku, mockup budoucí verze)
-xterge00 90 (vytvoření testů pro matematickou knihovnu)
+xzhukd00 104 (správa repozitáře, kontrola práce všech členů tymu, vytvoření matematické knihovny (zakládní a pokročilá logika), manualy a dokumentace, instalace/odinstalace)
+xkinas00 104 (vytvoření matematické knihovny (zakládní a pokročilá logika), makefile, vytvoření testů pro matematickou knihovnu, manualy a dokumentace)
+xlusky00 98 (vytvoření GUI pro kalkulačku, mockup budoucí verze)
+xterge00 94 (vytvoření testů pro matematickou knihovnu, makefile)

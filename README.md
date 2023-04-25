@@ -15,9 +15,17 @@ Prostředi
 
 Ubuntu 64bit
 
-Instalace a odinstalace
+Instalace
 -----------------------
+1.	Otevřete terminál v libovolné složce
+2.	Ke stažení instalačního balíku zkopírujte do terminálu:
+wget https://github.com/zdmytro123/MathMasters-Calculator/blob/main/releases/calc-app.deb
+3.	Do terminálu zkopírujte sudo dpkg -i calc-app.deb
 
+Odinstalace
+-----------
+1.	Otevřete terminál v libovolné složce
+2.	Do terminálu zkopírujte sudo dpkg -r calc-app.deb
 
 Autoři
 ------
